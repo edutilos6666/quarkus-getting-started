@@ -51,7 +51,7 @@ cd getting-started
 /usr/java/jdk1.8.0_181-amd64/bin/java -jar target/quarkus-getting-started-1.0-SNAPSHOT-runner.jar
 
 
-// building native image for container 
+#### building native image for container 
 
 mvn package -Pnative  \\ \
 -Dhttp.proxyHost=10.10.10.10 -Dhttp.proxyPort=666 \\ \
@@ -60,10 +60,10 @@ mvn package -Pnative  \\ \
 -Dquarkus.native.container-build=true
 
 
-// build docker image
+#### build docker image
 
 docker build --build-arg http_proxy=http://10.10.10.10:666 --build-arg https_proxy=http://10.10.10.10:666  -f src/main/docker/Dockerfile.native -t quarkus-quickstart/getting-started .
 
-//run image
+#### run image
  
 docker run -d -i --rm -p 8080:8080 --name quarkus-quickstart-container quarkus-quickstart/getting-started
